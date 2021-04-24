@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#define MAX 10
+#define MAX 50 
 
 int num[MAX] = {};
 
@@ -31,9 +31,8 @@ void bubble_sort() {
 void insertion_sort() {
   int temp, key, j;
 
-  for(int i = 1; i < MAX; i++) {
+  for(int i = 0; i < MAX; i++) {
     key = num[i+1];
-    j = i;
     for(j = i; j >= 0; j--) {
       if(num[j] < key) {
         break;
@@ -56,22 +55,29 @@ void print_result() {
 }
 
 int main(void) {
+  clock_t start, end;
+
   printf("<Bubble sort>\n");
   rand_num();
   printf("Not yet sorted: ");
   print_result();
+  start = clock();
   bubble_sort();
+  end = clock();
   printf("Sorted: ");
   print_result();
+  printf("\nTime: %lf", (double)(end-start)/CLOCKS_PER_SEC);
   printf("\n\n");
   
   printf("<Insertion sort>\n");
   rand_num();
   printf("Not yet sorted: ");
   print_result();
+  start = clock();
   insertion_sort();
+  end = clock();
   printf("Sorted: ");
   print_result();
-
+  printf("\nTime: %lf\n", (double)(end-start)/CLOCKS_PER_SEC);
   return 0;
 }
