@@ -12,8 +12,6 @@ Mostly from
 
 ### [Programmers](https://programmers.co.kr/)
 
-- Programmers : [Programmers Profile Page](https://career.programmers.co.kr/pr/neoham7_6668)
-
 ## Language
 
 C / C++ / Python / Javascript
